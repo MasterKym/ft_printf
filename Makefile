@@ -6,7 +6,7 @@
 #    By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 15:30:41 by mkhalid           #+#    #+#              #
-#    Updated: 2021/11/29 18:17:36 by mkhalid          ###   ########.fr        #
+#    Updated: 2021/11/30 16:44:45 by mkhalid          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,10 @@ CFLAGS = -Wall -Werror -Wextra
 ARFLAGS = rc
 
 SRCS = ft_printf.c \
-	   ft_putchar.c
+	   ft_putchar.c \
+	   ft_putstr.c \
+	   ft_print_hexa.c \
+	   ft_putnbr.c
 
 OBJS = $(SRCS:.c=.o)
 

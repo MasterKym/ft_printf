@@ -1,11 +1,12 @@
-
+/* ************************************************************************** */
+/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 15:38:03 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/11/29 18:01:01 by mkhalid          ###   ########.fr       */
+/*   Created: 2021/11/30 14:18:05 by mkhalid           #+#    #+#             */
+/*   Updated: 2021/11/30 16:39:32 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +27,26 @@ int	is_conversion(char c)
 	return (0);
 }
 
+int	print_arg(char c, va_list args)
+{
+	if (c == 'c')
+		return (ft_putchar(va_arg(args, int)));
+	if (c == 's')
+		return (ft_putstr(va_arg(args, char *)));
+	if (c == 'p')
+		return (ft_print_hexa((unsigned long)va_arg(args, void *)));
+	if (c == 'd')
+		return (ft_putnbr(va_arg(args, int)));
+	//if (c == 'i')
+	//if (c == 'u')
+	//if (c == 'x')
+	//if (c == 'X')
+	//if (c == '%')
+
+	return (0);
+
+}
+
 int	ft_printf(char *str, ...)
 {
 	va_list	args;
@@ -39,7 +60,7 @@ int	ft_printf(char *str, ...)
 	{
 		if (str[i] =='%' && is_conversion(str[i+1]))
 		{
-//			print_count += print_arg(str[i+1], args);
+			print_count += print_arg(str[i+1], args);
 			i +=2;
 			continue;
 		}
@@ -47,5 +68,5 @@ int	ft_printf(char *str, ...)
 		i++;
 	}
 	va_end(args);
-	return (0);
+	return (print_count);
 }
