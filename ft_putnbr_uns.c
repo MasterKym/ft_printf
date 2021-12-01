@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hexa.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_uns.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 15:52:00 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/12/01 19:42:06 by mkhalid          ###   ########.fr       */
+/*   Created: 2021/11/09 15:31:36 by mkhalid           #+#    #+#             */
+/*   Updated: 2021/12/01 09:46:26 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	_print_hexa(unsigned int nb, char *base, int base_len)
+void	_putnbr_uns(unsigned int nb)
 {
-	if (nb < 16)
+	char	c;
+
+	if (nb < 10)
 	{
-		ft_putchar(base[nb]);
-		return;
+		c = nb + '0';
+		write(1, &c, 1);
+		return ;
 	}
-	_print_hexa(nb / 16, base, base_len);
-	_print_hexa(nb % 16, base, base_len);
+	_putnbr_uns(nb / 10);
+	_putnbr_uns(nb % 10);
 }
 
-int	ft_print_hexa(unsigned int nb, char *base)
+int	ft_putnbr_uns(unsigned int nb)
 {
 	int	len;
-	int	base_len;
-
-	base_len = ft_strlen(base);
-	_print_hexa(nb, base, base_len);
+	
 	len = 0;
+	_putnbr_uns(nb / 10);
+	_putnbr_uns(nb % 10);
 	while(nb)
 	{
+		nb /= 10;
 		len++;
-		nb /= base_len;
 	}
-	return (len);	
+	return (len);
 }

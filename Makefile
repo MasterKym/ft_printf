@@ -6,7 +6,7 @@
 #    By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 15:30:41 by mkhalid           #+#    #+#              #
-#    Updated: 2021/11/30 16:44:45 by mkhalid          ###   ########.fr        #
+#    Updated: 2021/12/01 19:34:10 by mkhalid          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,10 @@ SRCS = ft_printf.c \
 	   ft_putchar.c \
 	   ft_putstr.c \
 	   ft_print_hexa.c \
-	   ft_putnbr.c
+	   ft_putnbr.c \
+	   ft_putnbr_uns.c \
+	   ft_strlen.c
+
 
 OBJS = $(SRCS:.c=.o)
 

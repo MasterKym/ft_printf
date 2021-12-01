@@ -6,7 +6,7 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 14:18:05 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/11/30 16:39:32 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/12/01 19:42:57 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,20 @@ int	print_arg(char c, va_list args)
 		return (ft_putchar(va_arg(args, int)));
 	if (c == 's')
 		return (ft_putstr(va_arg(args, char *)));
-	if (c == 'p')
-		return (ft_print_hexa((unsigned long)va_arg(args, void *)));
+	//if (c == 'p')
+	//
 	if (c == 'd')
 		return (ft_putnbr(va_arg(args, int)));
-	//if (c == 'i')
-	//if (c == 'u')
-	//if (c == 'x')
-	//if (c == 'X')
-	//if (c == '%')
+	if (c == 'i')
+		return (ft_putnbr(va_arg(args, int)));
+	if (c == 'u')
+		return (ft_putnbr_uns(va_arg(args, unsigned int)));
+	if (c == 'x')
+		return (ft_print_hexa(va_arg(args, unsigned int), "0123456789abcdef"));
+	if (c == 'X')
+		return (ft_print_hexa(va_arg(args, unsigned int), "0123456789ABCDEF"));
+	if (c == '%')
+		return (ft_putchar ('%'));
 
 	return (0);
 
