@@ -6,7 +6,7 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 15:52:00 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/12/05 17:53:50 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/12/05 20:35:05 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	_print_hexa(unsigned int nb, char *base, int base_len)
 	if (nb < 16)
 	{
 		ft_putchar(base[nb]);
-		return;
+		return ;
 	}
 	_print_hexa(nb / 16, base, base_len);
 	_print_hexa(nb % 16, base, base_len);
@@ -33,10 +33,10 @@ int	ft_print_hexa(unsigned int nb, char *base)
 	len = 0;
 	if (nb == 0)
 		len = 1;
-	while(nb)
+	while (nb)
 	{
 		len++;
 		nb /= base_len;
 	}
-	return (len);	
+	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 15:31:36 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/12/05 16:18:22 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/12/05 20:41:21 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	_get_len(int nb)
 	if (nb == 0)
 		return (1);
 	len = 0;
-	while(nb)
+	while (nb)
 	{
 		nb /= 10;
 		len++;
@@ -27,7 +27,7 @@ static int	_get_len(int nb)
 	return (len);
 }
 
-static void	_putnbr(int	nb)
+static void	_putnbr(int nb)
 {
 	char	c;
 
@@ -45,7 +45,7 @@ int	ft_putnbr(int nb)
 {
 	int	min;
 	int	sign;
-	
+
 	sign = (nb < 0) == 1;
 	if (nb < 0)
 	{
@@ -55,7 +55,7 @@ int	ft_putnbr(int nb)
 		{
 			_putnbr(nb / 10 * -1);
 			_putnbr(nb % 10 * -1);
-			return(_get_len(nb) + sign);
+			return (_get_len(nb) + sign);
 		}
 		nb *= -1;
 	}

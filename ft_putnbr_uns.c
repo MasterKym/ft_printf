@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_uns.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_uns.c                                     :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 15:31:36 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/12/05 17:38:57 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/12/05 20:41:52 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ void	_putnbr_uns(unsigned int nb)
 int	ft_putnbr_uns(unsigned int nb)
 {
 	int	len;
-	
+
 	len = 0;
 	_putnbr_uns(nb);
-	if(nb == 0)
+	if (nb == 0)
 		return (1);
-	while(nb)
+	while (nb)
 	{
 		nb /= 10;
 		len++;

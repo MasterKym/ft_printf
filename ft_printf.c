@@ -6,7 +6,7 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 14:18:05 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/12/03 20:47:10 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/12/05 20:37:24 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	is_conversion(char c)
 	char	*s;
 
 	s = "cspdiuxX%";
-	while(*s)
+	while (*s)
 	{
 		if (c == *s)
 			return (1);
@@ -47,27 +47,25 @@ int	print_arg(char c, va_list args)
 		return (ft_print_hexa(va_arg(args, unsigned int), "0123456789ABCDEF"));
 	if (c == '%')
 		return (ft_putchar ('%'));
-
 	return (0);
-
 }
 
 int	ft_printf(const char *str, ...)
 {
 	va_list	args;
-	int	i;
-	int	print_count;
+	int		i;
+	int		print_count;
 
 	i = 0;
 	print_count = 0;
 	va_start(args, str);
 	while (str[i])
 	{
-		if (str[i] =='%' && is_conversion(str[i+1]))
+		if (str[i] == '%' && is_conversion(str[i + 1]))
 		{
-			print_count += print_arg(str[i+1], args);
-			i +=2;
-			continue;
+			print_count += print_arg(str[i + 1], args);
+			i += 2;
+			continue ;
 		}
 		print_count += ft_putchar(str[i]);
 		i++;
