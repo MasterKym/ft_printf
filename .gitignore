@@ -2,3 +2,4 @@ main.c
 *.a
 *.o
 *.out
+printfTester

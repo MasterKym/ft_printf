@@ -6,7 +6,7 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 14:18:05 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/12/01 19:42:57 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/12/03 20:47:10 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	print_arg(char c, va_list args)
 		return (ft_putchar(va_arg(args, int)));
 	if (c == 's')
 		return (ft_putstr(va_arg(args, char *)));
-	//if (c == 'p')
-	//
+	if (c == 'p')
+		return (ft_print_addr(va_arg(args, unsigned long int)));
 	if (c == 'd')
 		return (ft_putnbr(va_arg(args, int)));
 	if (c == 'i')
@@ -52,7 +52,7 @@ int	print_arg(char c, va_list args)
 
 }
 
-int	ft_printf(char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	args;
 	int	i;

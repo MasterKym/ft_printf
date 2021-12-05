@@ -6,7 +6,7 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 15:31:36 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/12/01 09:46:26 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/12/05 17:38:57 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ int	ft_putnbr_uns(unsigned int nb)
 	int	len;
 	
 	len = 0;
-	_putnbr_uns(nb / 10);
-	_putnbr_uns(nb % 10);
+	_putnbr_uns(nb);
+	if(nb == 0)
+		return (1);
 	while(nb)
 	{
 		nb /= 10;
